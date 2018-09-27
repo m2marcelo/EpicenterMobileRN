@@ -22,7 +22,6 @@ export default class Login extends Component {
   }
 
   UserLogin = () => {
-    //Alert.alert("Alert", "Button pressed "+viewId);
     this.props.onLogin(this.state.email, this.state.password);
   }
 

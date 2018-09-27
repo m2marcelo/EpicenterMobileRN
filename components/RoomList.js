@@ -12,19 +12,6 @@ import {
 
 export default class RoomList extends Component {
 
-  constructor(props) {
-    super(props);
-    state = {
-      email   : '',
-      password: '',
-    }
-  }
-
-  UserLogin = () => {
-    //Alert.alert("Alert", "Button pressed "+viewId);
-    this.props.onLogin(this.state.email, this.state.password);
-  }
-
   render() {
     return (
       <View style={styles.container}>

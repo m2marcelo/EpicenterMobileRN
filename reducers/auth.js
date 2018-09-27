@@ -1,27 +1,34 @@
 const defaultState = {
     isLoggedIn: false,
     username: '',
-    password: ''
+    password: '',
+    rooms: {}
 };
 
 export default function auth(state = defaultState, action) {
-  console.log('got in the reducer - action.type = ', action.type)
+  console.log('got in the reducer - action.payload = ', action.payload)
+
     switch (action.type) {
         case 'LOGIN_SUCCESS':
             return {
-                state,
+                ...state,
                 isLoggedIn: true,
-                payload: action.payload,
-                username: action.username,
-                password: action.password
+                username: action.payload.username,
+                password: action.payload.password
             }
         case 'LOGOUT':
             return {
-                state,
+                ...state,
                 isLoggedIn: false,
                 username: '',
-                password: ''
+                password: '',
+                rooms: {}
             }
+        case 'ROOMS_LIST':
+          return {
+            ...state,
+            rooms: action.payload.rooms
+          }
         default:
             return state
     }
