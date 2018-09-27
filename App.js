@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Login from './containers/Login';
+import Main from './components/Main';
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
@@ -16,7 +16,7 @@ export default class App extends React.Component {
           createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
         }>
         <View style={{flex: 1}}>
-          <Login />
+          <Main />
         </View>
       </Provider>
 
